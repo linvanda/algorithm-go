@@ -26,4 +26,8 @@ func main() {
 
 	fmt.Printf("heap pop2:%v\n", heap.Pop())
 	fmt.Printf("heap pop2:%v\n", heap.Pop())
+
+	lst5 := []int{5, 4, 2, 7, 6, 8, 9, 12, 11, 4, 45, 34}
+	algo.QuickSort(lst5)
+	fmt.Printf("quick sort:%v\n", lst5)
 }
