@@ -103,6 +103,7 @@ func newHeap(lst []int, isMax bool) Heap {
 
 // 堆排序（升序）
 // 原址排序
+// 稳定性：不稳定排序
 // 时间复杂度：O(nlgn)
 // 首先将 lst 堆化。堆化完毕后，堆顶一定是最大元素，然后将堆顶元素和最后元素交换位置，并重新堆化。如此反复，直到堆大小变成 2
 func HeapSort(lst []int) {

@@ -30,4 +30,18 @@ func main() {
 	lst5 := []int{5, 4, 2, 7, 6, 8, 9, 12, 11, 4, 45, 34}
 	algo.QuickSort(lst5)
 	fmt.Printf("quick sort:%v\n", lst5)
+
+	lst6 := []int{5, 4, 2, 7, 6, 5, 8, 12}
+	lst6 = algo.CountingSort(lst6, -1)
+	fmt.Printf("counting sort:%v\n", lst6)
+
+	lst7 := []string{
+		"18609184738",
+		"13028782213",
+		"18609184732",
+		"13028722289",
+		"13128782213",
+	}
+	lst7 = algo.RadixSort(lst7, 11)
+	fmt.Printf("radix sort:%v\v", lst7)
 }
