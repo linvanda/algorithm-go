@@ -43,5 +43,9 @@ func main() {
 		"13128782213",
 	}
 	lst7 = algo.RadixSort(lst7, 11)
-	fmt.Printf("radix sort:%v\v", lst7)
+	fmt.Printf("radix sort:%v\n", lst7)
+
+	str := "aadfaaadfdffewqrffg"
+	s := algo.GetLongestUnrepeatedSubStr(str)
+	fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
 }
