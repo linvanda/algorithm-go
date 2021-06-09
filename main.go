@@ -48,4 +48,7 @@ func main() {
 	str := "aadfaaadfdffewqrffg"
 	s := algo.GetLongestUnrepeatedSubStr(str)
 	fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
+
+	lst8 := []float64{0.5, 0.1, 0.4, 0.9, 0.3, 0.6}
+	fmt.Printf("lst:%v,bucket sorted:%v\n", lst8, algo.BucketSort(lst8))
 }
