@@ -29,7 +29,7 @@ type bucket struct {
 
 func newBucket(l int) *bucket {
 	b := make([]*node, l)
-	// 初始化 -1
+	// 初始化 -1（哨兵。因为真实数据都是正数）
 	bSize := len(b)
 	for i := 0; i < bSize; i++ {
 		b[i] = &node{-1.0, nil}
@@ -40,7 +40,7 @@ func newBucket(l int) *bucket {
 // 将 val 插入到 idx 位置
 func(b *bucket) insert(idx int, val float64) {
 	if idx >= b.len {
-		panic("idx outof range")
+		panic("idx out of range")
 	}
 
 	cNode := b.buc[idx]

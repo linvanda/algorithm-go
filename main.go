@@ -51,4 +51,8 @@ func main() {
 
 	lst8 := []float64{0.5, 0.1, 0.4, 0.9, 0.3, 0.6}
 	fmt.Printf("lst:%v,bucket sorted:%v\n", lst8, algo.BucketSort(lst8))
+
+	lst9 := []int{5, 4, 2, 7, 6, 8, 12}
+	v := algo.OrderStatistic(lst9, 6)
+	fmt.Printf("the %v mini value:%v\n", 7, v)
 }
