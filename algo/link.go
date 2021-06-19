@@ -2,6 +2,8 @@ package algo
 
 // 链表
 // 此处实现包含哨兵的双向循环链表
+// 双向链表由于存在循环引用，需要额外处理销毁情况（略）
+// 另外，为了避免每次新创建 lNode，可以在 Link 里面维护一张单向链表 free，存储从链表中删除的结点对象，当需要创建 node 时，优先从 free 中获取
 
 type lNode struct {
 	val interface{}
