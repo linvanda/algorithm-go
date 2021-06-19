@@ -62,24 +62,35 @@ func main() {
 	////stack.Push(1)
 	//fmt.Printf("stack:%v,%v\n", stack.Pop(), stack.Pop())
 
-	queue := algo.NewQueue(4)
-	for i := 0; i < 3; i++ {
-		queue.Enqueue(i)
-		fmt.Printf("len:%v,is full:%v\n", queue.Length(), queue.IsFull())
-	}
+	//queue := algo.NewQueue(4)
+	//for i := 0; i < 3; i++ {
+	//	queue.Enqueue(i)
+	//	fmt.Printf("len:%v,is full:%v\n", queue.Length(), queue.IsFull())
+	//}
+	//
+	//println()
+	//
+	//for i := 0; i < 3; i++ {
+	//	fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
+	//}
+	//
+	//println()
+	//queue.Enqueue(10)
+	//queue.Enqueue(20)
+	//fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
+	//fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
+	//
+	//queue.Enqueue(30)
+	//fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
 
-	println()
-
-	for i := 0; i < 3; i++ {
-		fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
-	}
-
-	println()
-	queue.Enqueue(10)
-	queue.Enqueue(20)
-	fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
-	fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
-
-	queue.Enqueue(30)
-	fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
+	link := algo.NewLink()
+	link.Append(1)
+	link.Append(2)
+	link.Append(3)
+	fmt.Printf("link length:%d\n", link.Length())
+	fmt.Printf("pop:%v\n", link.Pop())
+	fmt.Printf("shift:%v\n", link.Shift())
+	fmt.Printf("len:%d\n", link.Length())
+	link.Delete(2)
+	fmt.Printf("len:%d\n", link.Length())
 }
