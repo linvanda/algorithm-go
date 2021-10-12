@@ -13,7 +13,7 @@ func GetLongestUnrepeatedSubStr(str string) string {
 	// 记录每个字符第一次出现的位置
 	positions := make(map[uint8]int)
 
-	max := [2]int{-1, -2}
+	max := [2]int{0, -1}
 
 	// 注意：right 整体向左偏移了一位，为了 for 里面计算 right + 1
 	for right < l - 1 {
@@ -25,7 +25,7 @@ func GetLongestUnrepeatedSubStr(str string) string {
 			right++
 			positions[ele] = 1
 		} else {
-			// 之前出现过该元素，将 left 右移一位，移动前先把位置记录下来
+			// 之前出现过该元素，将 left 右移一位，移动前先把位置记录下来，记录目前为止最大子串
 			if max[1] - max[0] < right - left {
 				max[0] = left
 				max[1] = right
@@ -33,6 +33,12 @@ func GetLongestUnrepeatedSubStr(str string) string {
 			positions[str[left]] -= 1
 			left++
 		}
+	}
+
+	// 再做一次赋值
+	if max[1] - max[0] < right - left {
+		max[0] = left
+		max[1] = right
 	}
 
 	return str[max[0]:max[1] + 1]

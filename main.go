@@ -45,9 +45,9 @@ func main() {
 	//lst7 = algo.RadixSort(lst7, 11)
 	//fmt.Printf("radix sort:%v\n", lst7)
 	//
-	//str := "aadfaaadfdffewqrffg"
-	//s := algo.GetLongestUnrepeatedSubStr(str)
-	//fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
+	str := "abcadcabadaf"
+	s := algo.GetLongestUnrepeatedSubStr(str)
+	fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
 	//
 	//lst8 := []float64{0.5, 0.1, 0.4, 0.9, 0.3, 0.6}
 	//fmt.Printf("lst:%v,bucket sorted:%v\n", lst8, algo.BucketSort(lst8))
@@ -83,14 +83,91 @@ func main() {
 	//queue.Enqueue(30)
 	//fmt.Printf("dequeue:%v, len:%v\n", queue.Dequeue(), queue.Length())
 
-	link := algo.NewLink()
-	link.Append(1)
-	link.Append(2)
-	link.Append(3)
-	fmt.Printf("link length:%d\n", link.Length())
-	fmt.Printf("pop:%v\n", link.Pop())
-	fmt.Printf("shift:%v\n", link.Shift())
-	fmt.Printf("len:%d\n", link.Length())
-	link.Delete(2)
-	fmt.Printf("len:%d\n", link.Length())
+	//link := algo.NewLink()
+	//link.Append(1)
+	//link.Append(2)
+	//link.Append(3)
+	//fmt.Printf("link length:%d\n", link.Length())
+	//fmt.Printf("pop:%v\n", link.Pop())
+	//fmt.Printf("shift:%v\n", link.Shift())
+	//fmt.Printf("len:%d\n", link.Length())
+	//link.Delete(2)
+	//fmt.Printf("len:%d\n", link.Length())
+
+	//input := []byte("hello")
+	//hash := sha1.Sum(input)
+	//fmt.Printf("%v\n", hash[:5])
+
+	//x := struct {
+	//	Name string `json:"name"`
+	//}{}
+
+	//s := struct {
+	//	b string
+	//	a int8
+	//	c int32
+	//}{"abc",0x01, 0x03040506}
+	//
+	//t := reflect.TypeOf(s)
+	//n := t.NumField()
+	//fmt.Printf("s size:%d\n", t.Size())
+	//for i := 0; i < n; i++ {
+	//	f := t.Field(i)
+	//	fmt.Printf("name:%s,offset:%d,size:%d,align:%d\n", f.Name, f.Offset, f.Type.Size(), f.Type.Align())
+	//}
+	//fmt.Printf("val:%#v\n", *(*[32]byte)(unsafe.Pointer(&s)))
+
+	//err := errors.New("some error")
+	//err1 := fmt.Errorf("get error:%v", err)
+	//err2 := fmt.Errorf("get error:%w", err)
+	//println(reflect.TypeOf(err1).String())
+	//println(reflect.TypeOf(err2).String())
+	//fmt.Printf("%T\n", err1)
+	//fmt.Printf("%T\n", err2)
+	//
+	//perr := &os.PathError{"write", "/tmp/", os.ErrPermission}
+	//wperr := fmt.Errorf("some path error:%w", perr)
+	//var patherr *os.PathError
+	//fmt.Printf("%v\n", errors.Is(wperr, os.ErrPermission))
+	//if errors.As(wperr, &patherr) {
+	//	fmt.Printf("path:%v\n", patherr.Path)
+	//}
+	//testDefer()
 }
+
+//func tickerDemo() {
+//	t := time.NewTicker(1*time.Second)
+//	defer t.Stop()
+//
+//	for {
+//		select {
+//			case <- t.C:
+//				log.Println("get tick")
+//		}
+//	}
+//}
+
+//func testDefer() {
+//	for i := 0; i < 5; i++ {
+//		defer func(i int) {
+//			fmt.Print(i)
+//		}(i)
+//	}
+//}
+//
+//func foo() {
+//	defer func() {
+//		println("deter foo")
+//		recover()
+//	}()
+//	defer_call()
+//	println("bar")
+//}
+//
+//func defer_call() {
+//	defer func() {println("打印 1")}()
+//	defer func() {println("打印 2");}()
+//	defer func() {println("打印 3")}()
+//
+//	panic("error")
+//}
