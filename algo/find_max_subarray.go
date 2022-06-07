@@ -72,3 +72,4 @@ func findMaxCrossSubArray(lst []int, low int, mid int, high int) [3]int {
 
 	return [3]int{leftIndex, rightIndex, leftMax + rightMax}
 }
+

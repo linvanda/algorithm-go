@@ -45,9 +45,9 @@ func main() {
 	//lst7 = algo.RadixSort(lst7, 11)
 	//fmt.Printf("radix sort:%v\n", lst7)
 	//
-	str := "abcadcabadaf"
-	s := algo.GetLongestUnrepeatedSubStr(str)
-	fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
+	//str := "abcadcabadaf"
+	//s := algo.GetLongestUnrepeatedSubStr(str)
+	//fmt.Printf("str:%v,longest unrepeat sub str:%v\n", str, s)
 	//
 	//lst8 := []float64{0.5, 0.1, 0.4, 0.9, 0.3, 0.6}
 	//fmt.Printf("lst:%v,bucket sorted:%v\n", lst8, algo.BucketSort(lst8))
@@ -133,6 +133,14 @@ func main() {
 	//	fmt.Printf("path:%v\n", patherr.Path)
 	//}
 	//testDefer()
+
+	//s2 := "a3i92o1f8gf9129h3ab"//
+	//fmt.Printf("%d\n", algo.LongestPalindrome1([]byte(s2)))
+
+	p := algo.Pos{7, 7}
+	step := 10
+	m := algo.HorseJumpDp(p, step)
+	fmt.Printf("%d\n", m)
 }
 
 //func tickerDemo() {
