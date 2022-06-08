@@ -131,7 +131,6 @@ func main() {
 
 	//s2 := "a3i92o1f8gf9129h3ab"//
 	//fmt.Printf("%d\n", algo.LongestPalindrome1([]byte(s2)))
-
 }
 
 //func tickerDemo() {
