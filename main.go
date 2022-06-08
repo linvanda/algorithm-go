@@ -1,10 +1,5 @@
 package main
 
-import (
-	"algo/algo"
-	"fmt"
-)
-
 func main() {
 	//lst := []int{4, 2, 1, 5, 6, 3, 8, 9}
 	//algo.InsertSort(lst)
@@ -137,10 +132,6 @@ func main() {
 	//s2 := "a3i92o1f8gf9129h3ab"//
 	//fmt.Printf("%d\n", algo.LongestPalindrome1([]byte(s2)))
 
-	p := algo.Pos{7, 7}
-	step := 10
-	m := algo.HorseJumpDp(p, step)
-	fmt.Printf("%d\n", m)
 }
 
 //func tickerDemo() {
