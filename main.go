@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	//lst := []int{4, 2, 1, 5, 6, 3, 8, 9}
 	//algo.InsertSort(lst)
@@ -131,41 +133,8 @@ func main() {
 
 	//s2 := "a3i92o1f8gf9129h3ab"//
 	//fmt.Printf("%d\n", algo.LongestPalindrome1([]byte(s2)))
+
+
+	a := -4*(2-34)-46+33 - 12 / 4 * (22 - 4 * (223-86/(3+3-4*(9-9+(5-4)))))
+	fmt.Printf("%v\n", a)
 }
-
-//func tickerDemo() {
-//	t := time.NewTicker(1*time.Second)
-//	defer t.Stop()
-//
-//	for {
-//		select {
-//			case <- t.C:
-//				log.Println("get tick")
-//		}
-//	}
-//}
-
-//func testDefer() {
-//	for i := 0; i < 5; i++ {
-//		defer func(i int) {
-//			fmt.Print(i)
-//		}(i)
-//	}
-//}
-//
-//func foo() {
-//	defer func() {
-//		println("deter foo")
-//		recover()
-//	}()
-//	defer_call()
-//	println("bar")
-//}
-//
-//func defer_call() {
-//	defer func() {println("打印 1")}()
-//	defer func() {println("打印 2");}()
-//	defer func() {println("打印 3")}()
-//
-//	panic("error")
-//}

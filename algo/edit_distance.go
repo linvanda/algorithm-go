@@ -43,6 +43,7 @@ func EditDistance2(src, dst string) int {
 
 // 暴力尝试
 // 声明：该函数能够计算子串 src[i,len-1] -> dst[j,len-1] 的最短距离
+//（另一种方式是 i、j 表示处理 src[0,i]->dst[0,j]）的最短距离（前缀法））
 func processEDist(src, dst []byte, i, j int) int {
 	// base case
 	if i == len(src) && j == len(dst) {
