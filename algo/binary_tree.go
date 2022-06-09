@@ -29,7 +29,7 @@ func (n *Node) Equal(node *Node) bool {
 }
 
 // 二叉搜索树
-// 特点：节点 node 的做子树的值都比自己的小，右子树的值都>=自己的
+// 特点：节点 node 的左子树的值都比自己的小，右子树的值都>=自己的
 type BSTree struct {
 	idGen int
 	node *Node

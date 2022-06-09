@@ -245,7 +245,7 @@ func dp3(s []byte) int {
 				//	p = maxInt(2 + arr[i + 1][j - 1], p)
 				//}
 
-				arr[i][j] = maxInt(p1, maxInt(p2, p3))
+				arr[i][j] = maxInt(p1, p2, p3)
 			}
 		}
 	}
@@ -253,12 +253,34 @@ func dp3(s []byte) int {
 	return arr[0][L]
 }
 
-func maxInt(x, y int) int {
-	if x > y {
-		return x
+func maxInt(x, y int, args ...int) int {
+	max := x
+	if x < y {
+		max = y
 	}
 
-	return y
+	for _, v := range args {
+		if v > max {
+			max = v
+		}
+	}
+
+	return max
+}
+
+func minInt(x, y int, args ...int) int {
+	min := x
+	if y < x {
+		min = y
+	}
+
+	for _, v := range args {
+		if v < min {
+			min = v
+		}
+	}
+
+	return min
 }
 
 // 将 process1 改造成动态规划
