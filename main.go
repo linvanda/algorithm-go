@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	//lst := []int{4, 2, 1, 5, 6, 3, 8, 9}
@@ -134,7 +137,5 @@ func main() {
 	//s2 := "a3i92o1f8gf9129h3ab"//
 	//fmt.Printf("%d\n", algo.LongestPalindrome1([]byte(s2)))
 
-
-	a := -4*(2-34)-46+33 - 12 / 4 * (22 - 4 * (223-86/(3+3-4*(9-9+(5-4)))))
-	fmt.Printf("%v\n", a)
+	fmt.Printf("%b\n", math.MaxFloat64)
 }
