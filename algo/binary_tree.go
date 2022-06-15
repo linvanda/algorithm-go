@@ -83,7 +83,7 @@ func (t *BSTree) Add(val int) {
 	}
 }
 
-// 删除第一次找到的 val 相同的 node
+// 删除第一次找到的 Val 相同的 node
 // 删除成功则返回 true，没有找到对应的 node 返回 false
 func (t *BSTree) Del(val int) bool {
 	if t.node == nil {
@@ -103,7 +103,7 @@ func (t *BSTree) Del(val int) bool {
 	return true
 }
 
-// 查找 value 等于 val 的第一个 Node 并返回
+// 查找 value 等于 Val 的第一个 Node 并返回
 // 没有找到返回 nil
 func (t *BSTree) Find(val int) *Node {
 	curr, _ := t.findWithParent(val)

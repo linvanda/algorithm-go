@@ -25,7 +25,7 @@ func TestEditDistance1WithDefaultCost(t *testing.T) {
 	for i, v := range dstArr {
 		got := algo.EditDistance1(v[0], v[1])
 		if got != defaultDstAns[i] {
-			t.Errorf("src:%s,dst:%s,expect:%d,got:%d\n", v[0], v[1], defaultDstAns[i], got)
+			t.Errorf("src:%s,Dst:%s,expect:%d,got:%d\n", v[0], v[1], defaultDstAns[i], got)
 		}
 	}
 }
@@ -36,7 +36,7 @@ func TestEditDistance2WithDefaultCost(t *testing.T) {
 	for i, v := range dstArr {
 		got := algo.EditDistance2(v[0], v[1])
 		if got != defaultDstAns[i] {
-			t.Errorf("src:%s,dst:%s,expect:%d,got:%d\n", v[0], v[1], defaultDstAns[i], got)
+			t.Errorf("src:%s,Dst:%s,expect:%d,got:%d\n", v[0], v[1], defaultDstAns[i], got)
 		}
 	}
 }

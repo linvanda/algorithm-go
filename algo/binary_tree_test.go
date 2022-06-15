@@ -47,7 +47,7 @@ func TestBSTree_Add(t *testing.T) {
 		for _, v := range bv {
 			node := bstree.Find(v)
 			if node == nil || node.Val() != v {
-				t.Errorf("node error,expect val:%d,got node:%v\n", v, node)
+				t.Errorf("node error,expect Val:%d,got node:%v\n", v, node)
 			}
 		}
 	}
@@ -82,7 +82,7 @@ func TestBSTree_Del(t *testing.T) {
 		}
 
 		if bstree.Count() != len(bv) {
-			t.Errorf("bstree val %v readd error.expect:%d,got:%d\n", bv, len(bv), bstree.Count())
+			t.Errorf("bstree Val %v readd error.expect:%d,got:%d\n", bv, len(bv), bstree.Count())
 		}
 	}
 }

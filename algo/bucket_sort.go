@@ -12,7 +12,7 @@ func BucketSort(lst []float64) []float64 {
 	n := len(lst)
 	bucket := newBucket(n + 1)
 
-	// 元素择桶算法：bucket_index = floor(n*val)
+	// 元素择桶算法：bucket_index = floor(n*Val)
 	for i := 0; i < n; i++ {
 		idx :=int(float64(n) * lst[i])
 		bucket.insert(idx, lst[i])
@@ -37,7 +37,7 @@ func newBucket(l int) *bucket {
 	return &bucket{b, l, 0}
 }
 
-// 将 val 插入到 idx 位置
+// 将 Val 插入到 idx 位置
 func(b *bucket) insert(idx int, val float64) {
 	if idx >= b.len {
 		panic("idx out of range")
