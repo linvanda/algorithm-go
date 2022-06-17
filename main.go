@@ -1,7 +1,7 @@
 package main
 
-import "algo/algo"
+import "math"
 
 func main() {
-	algo.TestHeap()
+	math.Pow(3,4)
 }

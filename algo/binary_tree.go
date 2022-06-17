@@ -40,6 +40,59 @@ func NewBSTree() *BSTree {
 	return &BSTree{idGen: 1}
 }
 
+// 将有序数组转成二叉查找树
+// （逆向操作：通过中序遍历可以将二叉查找树转成有序数组）
+// 方法：二叉查找树本质是由二分搜索+链表的思想发展而来，我们采用二分法，取数组中间元素作为父节点，左边的作为左子树，右边的作为右子树，如此递归处理
+func NewBSTreeFromSortedArray(arr []int) *BSTree {
+	if len(arr) == 0 {
+		return nil
+	}
+
+	// 这里可以一个一个调 Add 方法加入，不过我们采用另一种更有效的方法：取数组中间元素作为父节点，左边的作为左子树，右边的作为右子树，如此递归处理
+	// （如果采用 Add 加入，则会得到一棵非常不平衡的树--链表，所以不用此方法）
+	bt := &BSTree{idGen: 1}
+	bt.node = bt.buildBSTreeFromSortedArray(arr)
+	bt.cnt = bt.idGen - 1
+
+	return bt
+}
+
+// 根据 arr 生成子树，返回子树的根节点
+func (t *BSTree) buildBSTreeFromSortedArray(arr []int) *Node {
+	l := len(arr)
+	if l == 0 {
+		return nil
+	}
+
+	if l == 1 {
+		node := &Node{
+			id: t.idGen,
+			val: arr[0],
+		}
+		t.idGen++
+
+		return node
+	}
+
+	// 取中间元素生成根节点
+	m := l/2
+	mNode := &Node{
+		id: t.idGen,
+		val: arr[m],
+	}
+	t.idGen++
+
+	// 左子树
+	mNode.left = t.buildBSTreeFromSortedArray(arr[:m])
+	// 右子树
+	if m < l - 1 {
+		// 要判断越界情况
+		mNode.right = t.buildBSTreeFromSortedArray(arr[m+1:])
+	}
+
+	return mNode
+}
+
 // 节点数量
 func (t *BSTree) Count() int {
 	return t.cnt

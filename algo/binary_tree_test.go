@@ -15,6 +15,8 @@ var bstreeVals = [][]int{
 	{11,10,9,8,7,6,10,5,4,3,2,100,90},
 }
 
+var sortedArrayVals = []int {1,2,3,4,5,6,7,8,9,10,11}
+
 var preorderResults = [][]int {
 	{50,30,20,10,25,40,80,70,65,75,90,85},
 }
@@ -25,6 +27,25 @@ var middleorderResults = [][]int{
 
 var postorderResults = [][]int{
 	{10,25,20,40,30,65,75,70,85,90,80,50},
+}
+
+func TestNewBSTreeFromSortedArray(t *testing.T) {
+	bt := algo.NewBSTreeFromSortedArray(sortedArrayVals)
+	if bt.Count() != 11 {
+		t.Errorf("expect:%v,get:%v\n", 11, bt.Count())
+	}
+
+	middles := bt.MiddleOrder()
+	middlesVal := make([]int, len(middles))
+	for i, v := range middles {
+		middlesVal[i] = v.Val()
+	}
+
+	for i, v := range sortedArrayVals {
+		if v != middlesVal[i] {
+			t.Errorf("build error\n")
+		}
+	}
 }
 
 func TestBSTree_Add(t *testing.T) {
