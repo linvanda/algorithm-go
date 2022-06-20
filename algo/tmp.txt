@@ -1,0 +1,43 @@
+class Lock {
+	// 重试间隔：1 秒
+	const RETRY_INTERVAL = 1000;
+	...
+	// 重试次数（包括首次）
+	private retryNum;
+
+	// retryNum: 默认只执行一次（不重试）
+	public function Lock(Redis redis, string name, int ttl = 3000, int retryNum = 1) {
+		...
+		// 做下防御
+		if (retryNum < 0 || retryNum > 20) {
+			retryNum = 1;
+		}
+		this.retryNum = retryNum;
+	}
+
+	// 加锁
+	public function lock() bool {
+		if (this.status != self::ST_UNLOCK) {
+			return false;
+		}
+
+		// 使用 SET 命令加锁
+		// 加入重试机制
+		for (i = 0; i < this.retryNum; i++) {
+			try {
+				result = redis.set(this.name, this.token, "NX", "PX", this.ttl);
+				if (bool(result)) {
+					// 加锁成功，返回
+					this.status = self::ST_LOCKED;
+					return true;
+				}
+			} catch (Exception e) {}
+
+			// 加锁失败了，等待一定的时间后重试
+			// 当前线程/协程进入休眠
+			sleep(self::RETRY_INTERVAL);
+		}
+
+		return false;
+	}
+}
